@@ -1,0 +1,30 @@
+{
+  "name": "ic-kit",
+  "version": "0.0.1",
+  "description": "The kit that generates the templates for the PWA deployed on the Internet Computer with DeckDeckGo",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./build.js"
+  },
+  "author": "David Dal Busco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deckgo/ic-kit"
+  },
+  "homepage": "https://deckdeckgo.com",
+  "devDependencies": {
+    "esbuild": "^0.13.13",
+    "html-minifier-terser": "^6.0.2",
+    "husky": "^7.0.4",
+    "prettier": "^2.4.1",
+    "prettier-quick": "^0.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "@deckdeckgo/kit": "^4.0.1"
+  }
+}
