@@ -31,7 +31,7 @@ const crypto = require('crypto');
   const minifyOptions = {
     collapseWhitespace: true,
     keepClosingSlash: true,
-    removeComments: true,
+    removeComments: false,
     removeRedundantAttributes: true,
     removeScriptTypeAttributes: true,
     removeStyleLinkTypeAttributes: true,
@@ -42,7 +42,7 @@ const crypto = require('crypto');
 
   const html = (await minify(src, minifyOptions))
     .replace('{{DECKDECKGO_EXTRA_SHAS}}', sha256)
-    .replace('{{DECKDECKGO_HEAD_SCRIPT}}', `<script>${script}</script>`);
+    .replace('<!-- DECKDECKGO_HEAD_SCRIPT -->', `<script>${script}</script>`);
 
   await writeFile('dist/deck.html', html);
 })();
