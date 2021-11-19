@@ -2,10 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover" />
 
     <meta
       http-equiv="Content-Security-Policy"
@@ -30,84 +27,56 @@
     <meta property="og:description" content="{{DECKDECKGO_DESCRIPTION}}" />
     <meta property="og:site_name" content="{{DECKDECKGO_TITLE}}" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://beta.deckdeckgo.io{{DECKDECKGO_BASE_HREF}}"
-    />
-    <meta
-      property="og:image"
-      content="https://firebasestorage.googleapis.com/v0/b/deckdeckgo-studio-prod.appspot.com/o/{{DECKDECKGO_USER_ID}}%2Fpresentations%2F{{DECKDECKGO_DECKNAME}}%2Fdeckdeckgo.png?alt=media"
-    />
+    <meta property="og:url" content="https://beta.deckdeckgo.io{{DECKDECKGO_BASE_HREF}}" />
+    <meta property="og:image" content="https://deckdeckgo.com/assets/meta/deckdeckgo-meta.png" />
     <meta property="og:image:type" content="image/png" />
 
     <meta name="twitter:site" content="@deckdeckgo" />
     <meta name="twitter:title" content="{{DECKDECKGO_TITLE}}" />
     <meta name="twitter:description" content="{{DECKDECKGO_DESCRIPTION}}" />
-    <meta
-      name="twitter:image:src"
-      content="https://firebasestorage.googleapis.com/v0/b/deckdeckgo-studio-prod.appspot.com/o/{{DECKDECKGO_USER_ID}}%2Fpresentations%2F{{DECKDECKGO_DECKNAME}}%2Fdeckdeckgo.png?alt=media"
-    />
+    <meta name="twitter:image:src" content="https://deckdeckgo.com/assets/meta/deckdeckgo-meta.png" />
     <meta name="twitter:card" content="summary_large_image" />
 
     <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="{{DECKDECKGO_BASE_HREF}}assets/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="{{DECKDECKGO_BASE_HREF}}assets/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="{{DECKDECKGO_BASE_HREF}}assets/favicon/favicon-16x16.png"
-    />
-    <link
-      rel="shortcut icon"
-      href="{{DECKDECKGO_BASE_HREF}}assets/favicon/favicon.ico"
-    />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta
-      name="msapplication-config"
-      content="{{DECKDECKGO_BASE_HREF}}assets/favicon/browserconfig.xml"
-    />
+    <link rel="apple-touch-icon" sizes="48x48" href="https://deckdeckgo.com/icons/icon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://deckdeckgo.com/icons/icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="96x96" href="https://deckdeckgo.com/icons/icon-96x96.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://deckdeckgo.com/icons/icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="https://deckdeckgo.com/icons/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="256x256" href="https://deckdeckgo.com/icons/icon-256x256.png" />
+    <link rel="apple-touch-icon" sizes="384x384" href="https://deckdeckgo.com/icons/icon-384x384.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="https://deckdeckgo.com/icons/icon-512x512.png" />
+
+    <link rel="icon" href="https://deckdeckgo.com/favicon-32x32.png" type="image/png" />
+
     <meta name="theme-color" content="#ffffff" />
 
     <script nonce="17ab93ad-71a0-4812-bc0f-6f87711a63c7">
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", async () => {
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', async () => {
           try {
-            const reg = await navigator.serviceWorker.register(
-              "service-worker.js"
-            );
+            const reg = await navigator.serviceWorker.register('service-worker.js');
             reg.onupdatefound = () => {
               const installingWorker = reg.installing;
               installingWorker.onstatechange = () => {
-                if (installingWorker.state === "installed") {
-                  window.dispatchEvent(new Event("swUpdate"));
+                if (installingWorker.state === 'installed') {
+                  window.dispatchEvent(new Event('swUpdate'));
                 }
               };
             };
           } catch (e) {
-            console.warn("No service worker registered");
+            console.warn('No service worker registered');
           }
         });
       }
     </script>
 
     <script nonce="fd70f3b5-5391-415d-af05-3a18e4ffdb0e">
-      window.ROOM_NAME = "{{DECKDECKGO_TITLE}}";
+      window.ROOM_NAME = '{{DECKDECKGO_TITLE}}';
       window.EMBEDDED = false;
       window.PENDING_REMOTE_REQUESTS = [];
       window.REMOTE_STATE = 0;
     </script>
-
-    {{DECKDECKGO_HEAD_SCRIPT}}
 
     <link rel="manifest" href="../manifest.json" />
 
@@ -115,41 +84,20 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="msapplication-tap-highlight" content="no" />
 
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
-    />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/core@latest/dist/deckdeckgo/deckdeckgo.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/remote@latest/dist/deckdeckgo-remote/deckdeckgo-remote.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/charts@latest/dist/deckdeckgo-charts/deckdeckgo-charts.esm.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/core@latest/dist/deckdeckgo/deckdeckgo.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/remote@latest/dist/deckdeckgo-remote/deckdeckgo-remote.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/charts@latest/dist/deckdeckgo-charts/deckdeckgo-charts.esm.js"></script>
     <script
       type="module"
       src="https://unpkg.com/@deckdeckgo/laser-pointer@latest/dist/deckdeckgo-laser-pointer/deckdeckgo-laser-pointer.esm.js"
     ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/demo@latest/dist/deckdeckgo-demo/deckdeckgo-demo.esm.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/demo@latest/dist/deckdeckgo-demo/deckdeckgo-demo.esm.js"></script>
     <script
       type="module"
       src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.esm.js"
@@ -158,38 +106,17 @@
       type="module"
       src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"
     ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/lazy-img@latest/dist/deckdeckgo-lazy-img/deckdeckgo-lazy-img.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/math@latest/dist/deckdeckgo-math/deckdeckgo-math.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/qrcode@latest/dist/deckdeckgo-qrcode/deckdeckgo-qrcode.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/social@latest/dist/deckdeckgo-social/deckdeckgo-social.esm.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/lazy-img@latest/dist/deckdeckgo-lazy-img/deckdeckgo-lazy-img.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/math@latest/dist/deckdeckgo-math/deckdeckgo-math.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/qrcode@latest/dist/deckdeckgo-qrcode/deckdeckgo-qrcode.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/social@latest/dist/deckdeckgo-social/deckdeckgo-social.esm.js"></script>
     <script
       type="module"
       src="https://unpkg.com/@deckdeckgo/word-cloud@latest/dist/deckdeckgo-word-cloud/deckdeckgo-word-cloud.esm.js"
     ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/youtube@latest/dist/deckdeckgo-youtube/deckdeckgo-youtube.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/reveal@latest/dist/deckdeckgo-reveal/deckdeckgo-reveal.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/markdown@latest/dist/deckdeckgo-markdown/deckdeckgo-markdown.esm.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/youtube@latest/dist/deckdeckgo-youtube/deckdeckgo-youtube.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/reveal@latest/dist/deckdeckgo-reveal/deckdeckgo-reveal.esm.js"></script>
+    <script type="module" src="https://unpkg.com/@deckdeckgo/markdown@latest/dist/deckdeckgo-markdown/deckdeckgo-markdown.esm.js"></script>
 
     <script
       type="module"
@@ -236,10 +163,7 @@
       src="https://unpkg.com/@deckdeckgo/slide-playground@latest/dist/deckdeckgo-slide-playground/deckdeckgo-slide-playground.esm.js"
     ></script>
 
-    <script
-      type="module"
-      src="https://unpkg.com/web-social-share@latest/dist/websocialshare/websocialshare.esm.js"
-    ></script>
+    <script type="module" src="https://unpkg.com/web-social-share@latest/dist/websocialshare/websocialshare.esm.js"></script>
 
     {{DECKDECKGO_HEAD_EXTRA}}
 
@@ -272,17 +196,77 @@
       ion-app.loading {
         display: none;
       }
+
+      :root {
+        --ion-color-primary: #3880ff;
+        --ion-color-primary-rgb: 56,128,255;
+        --ion-color-primary-contrast: #ffffff;
+        --ion-color-primary-contrast-rgb: 255,255,255;
+        --ion-color-primary-shade: #3171e0;
+        --ion-color-primary-tint: #4c8dff;
+
+        --ion-color-secondary: #3dc2ff;
+        --ion-color-secondary-rgb: 61,194,255;
+        --ion-color-secondary-contrast: #ffffff;
+        --ion-color-secondary-contrast-rgb: 255,255,255;
+        --ion-color-secondary-shade: #36abe0;
+        --ion-color-secondary-tint: #50c8ff;
+
+        --ion-color-tertiary: #5260ff;
+        --ion-color-tertiary-rgb: 82,96,255;
+        --ion-color-tertiary-contrast: #ffffff;
+        --ion-color-tertiary-contrast-rgb: 255,255,255;
+        --ion-color-tertiary-shade: #4854e0;
+        --ion-color-tertiary-tint: #6370ff;
+
+        --ion-color-success: #2dd36f;
+        --ion-color-success-rgb: 45,211,111;
+        --ion-color-success-contrast: #ffffff;
+        --ion-color-success-contrast-rgb: 255,255,255;
+        --ion-color-success-shade: #28ba62;
+        --ion-color-success-tint: #42d77d;
+
+        --ion-color-warning: #ffc409;
+        --ion-color-warning-rgb: 255,196,9;
+        --ion-color-warning-contrast: #000000;
+        --ion-color-warning-contrast-rgb: 0,0,0;
+        --ion-color-warning-shade: #e0ac08;
+        --ion-color-warning-tint: #ffca22;
+
+        --ion-color-danger: #eb445a;
+        --ion-color-danger-rgb: 235,68,90;
+        --ion-color-danger-contrast: #ffffff;
+        --ion-color-danger-contrast-rgb: 255,255,255;
+        --ion-color-danger-shade: #cf3c4f;
+        --ion-color-danger-tint: #ed576b;
+
+        --ion-color-dark: #222428;
+        --ion-color-dark-rgb: 34,36,40;
+        --ion-color-dark-contrast: #ffffff;
+        --ion-color-dark-contrast-rgb: 255,255,255;
+        --ion-color-dark-shade: #1e2023;
+        --ion-color-dark-tint: #383a3e;
+
+        --ion-color-medium: #92949c;
+        --ion-color-medium-rgb: 146,148,156;
+        --ion-color-medium-contrast: #ffffff;
+        --ion-color-medium-contrast-rgb: 255,255,255;
+        --ion-color-medium-shade: #808289;
+        --ion-color-medium-tint: #9d9fa6;
+
+        --ion-color-light: #f4f5f8;
+        --ion-color-light-rgb: 244,245,248;
+        --ion-color-light-contrast: #000000;
+        --ion-color-light-contrast-rgb: 0,0,0;
+        --ion-color-light-shade: #d7d8da;
+        --ion-color-light-tint: #f5f6f9;
+      }
+
     </style>
   </head>
   <body>
     <ion-app class="loading">
-      <ion-menu
-        id="ion-menu"
-        side="start"
-        type="overlay"
-        swipeGesture="false"
-        content-id="main"
-      >
+      <ion-menu id="ion-menu" side="start" type="overlay" swipeGesture="false" content-id="main">
         <ion-content>
           <deckgo-chapters></deckgo-chapters>
         </ion-content>
@@ -297,78 +281,42 @@
             <ion-title>{{DECKDECKGO_TITLE}}</ion-title>
             <ion-buttons slot="end">
               <ion-button id="deckMenu"
-                ><ion-icon
-                  src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/ellipsis-vertical.svg"
-                ></ion-icon
-              ></ion-button>
+                ><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
 
-        <ion-content
-          force-overscroll="false"
-          style="position: relative; --overflow: hidden"
-        >
-          <main>
-            <deckgo-deck id="slider" embedded="true"> </deckgo-deck>
-          </main>
+        <ion-content force-overscroll="false" style="position: relative; --overflow: hidden">
+          <main>{{DECKDECKGO_DECK}}</main>
 
           <deckgo-remote></deckgo-remote>
 
           <button id="previous" class="navigation ion-activatable">
             <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon
-              src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/chevron-back.svg"
-              aria-label="Previous slide"
-            ></ion-icon>
+            <ion-icon name="chevron-back"></ion-icon>
           </button>
 
           <button id="next" class="navigation ion-activatable">
             <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon
-              src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/chevron-forward.svg"
-              aria-label="Next slide"
-            ></ion-icon>
+            <ion-icon name="chevron-forward"></ion-icon>
           </button>
         </ion-content>
       </div>
 
-      <ion-fab
-        vertical="top"
-        horizontal="end"
-        slot="fixed"
-        id="fullscreen-menu"
-      >
-        <button
-          id="slidePicker"
-          class="navigation ion-activatable"
-          aria-label="Jump to a particular slide"
-        >
+      <ion-fab vertical="top" horizontal="end" slot="fixed" id="fullscreen-menu">
+        <button id="slidePicker" class="navigation ion-activatable" aria-label="Jump to a particular slide">
           <ion-ripple-effect></ion-ripple-effect>
-          <ion-icon
-            src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/list.svg"
-            aria-label="Jump to a particular slide"
-          ></ion-icon>
+          <ion-icon name="list"></ion-icon>
         </button>
 
-        <button
-          id="fullScreen"
-          class="navigation ion-activatable hide-on-mobile"
-          aria-label="Full screen"
-        >
+        <button id="fullScreen" class="navigation ion-activatable hide-on-mobile" aria-label="Full screen">
           <ion-ripple-effect></ion-ripple-effect>
-          <ion-icon
-            src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/contract.svg"
-            aria-label="Exit full screen"
-          ></ion-icon>
+          <ion-icon name="contract"></ion-icon>
         </button>
 
-        <button id="remote" class="navigation ion-activatable">
+        <button id="remote" class="navigation ion-activatable" aria-label="Open Remote">
           <ion-ripple-effect></ion-ripple-effect>
-          <ion-icon
-            src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/phone-portrait.svg"
-            aria-label="Open Remote"
-          ></ion-icon>
+          <ion-icon name="phone-portrait-outline"></ion-icon>
         </button>
       </ion-fab>
 
@@ -377,36 +325,33 @@
       <ion-modal-controller></ion-modal-controller>
       <ion-alert-controller></ion-alert-controller>
 
-      <web-social-share
-        show="false"
-        style="--web-social-share-backdrop-opacity: 0.5"
-      >
+      <web-social-share show="false" style="--web-social-share-backdrop-opacity: 0.5">
         <ion-icon
-          src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/twitter.svg"
+          name="logo-twitter"
           aria-label="Twitter"
           slot="twitter"
           style="color: #00aced; font-size: 1.6rem; display: block"
         ></ion-icon>
         <ion-icon
-          src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/linkedin.svg"
+          name="logo-linkedin"
           aria-label="Linkedin"
           slot="linkedin"
           style="color: #0077b5; font-size: 1.6rem; display: block"
         ></ion-icon>
         <ion-icon
-          src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/mail.svg"
+          name="mail"
           aria-label="Email"
           slot="email"
           style="color: #ff8ea3; font-size: 1.6rem; display: block"
         ></ion-icon>
         <ion-icon
-          src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/whatsapp.svg"
+          name="logo-whatsapp"
           aria-label="WhatsApp"
           slot="whatsapp"
           style="color: #25d366; font-size: 1.6rem; display: block"
         ></ion-icon>
         <ion-icon
-          src="{{DECKDECKGO_BASE_HREF}}assets/icons/ionicons/hackernews.svg"
+          name="logo-hackernews"
           aria-label="Hacker News"
           slot="hackernews"
           style="color: #ff6000; font-size: 1.6rem; display: block"
