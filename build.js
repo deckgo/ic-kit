@@ -7,7 +7,7 @@ const crypto = require('crypto');
   await rm('./dist', {recursive: true, force: true});
   await mkdir('./dist');
 
-  const {outputFiles} = esbuild.buildSync({
+  const {outputFiles: js} = esbuild.buildSync({
     entryPoints: ['src/deck/index.js'],
     bundle: true,
     minify: true,
@@ -21,10 +21,19 @@ const crypto = require('crypto');
     }
   });
 
-  const script = outputFiles[0].text;
+  const script = js[0].text;
 
   // prettier-ignore
   const sha256 = `'sha256-${crypto.createHash("sha256").update(script).digest("base64")}'`;
+
+  const {outputFiles: css} = esbuild.buildSync({
+    entryPoints: ['src/deck/index.css'],
+    bundle: true,
+    minify: true,
+    format: 'esm',
+    target: ['esnext'],
+    write: false
+  });
 
   const src = await readFile('src/deck/index.html', 'utf8');
 
@@ -42,7 +51,8 @@ const crypto = require('crypto');
 
   const html = (await minify(src, minifyOptions))
     .replace('{{DECKDECKGO_EXTRA_SHAS}}', sha256)
-    .replace('<!-- DECKDECKGO_HEAD_SCRIPT -->', `<script>${script}</script>`);
+    .replace('<!-- DECKDECKGO_HEAD_SCRIPT -->', `<script>${script}</script>`)
+    .replace('<!-- DECKDECKGO_HEAD_CSS -->', `<style>${css[0].text}</style>`);
 
   await writeFile('dist/deck.html', html);
 })();
