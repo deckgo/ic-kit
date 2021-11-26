@@ -1,0 +1,16 @@
+{
+  "name": "{{DECKDECKGO_TITLE}}",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "start_url": "/",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "https://deckdeckgo.com/assets/deckdeckgo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

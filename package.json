@@ -6,7 +6,8 @@
   "scripts": {
     "build:js": "node ./build.js",
     "build:sw": "node ./build-sw.js",
-    "build": "npm run build:js && npm run build:sw"
+    "copy": "node ./copy.js",
+    "build": "npm run build:js && npm run copy && npm run build:sw"
   },
   "author": "David Dal Busco",
   "license": "MIT",
