@@ -12,7 +12,7 @@
     img-src 'self' data: https:;
     style-src 'self' 'unsafe-inline' https://www.gstatic.com https://fonts.googleapis.com https://cdn.jsdelivr.net/ https://unpkg.com/;
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
-    script-src 'self' blob: 'unsafe-eval' 'nonce-17ab93ad-71a0-4812-bc0f-6f87711a63c7' 'nonce-fd70f3b5-5391-415d-af05-3a18e4ffdb0e' {{DECKDECKGO_EXTRA_SHAS}} https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    script-src 'self' blob: 'unsafe-eval' 'nonce-fd70f3b5-5391-415d-af05-3a18e4ffdb0e' {{DECKDECKGO_EXTRA_SHAS}} https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
     connect-src 'self' https://deckdeckgo.com/ https://app.deckdeckgo.com/ wss://api.deckdeckgo.com/ https://raw.githubusercontent.com/PrismJS/ https://raw.githubusercontent.com/deckgo/ https://api.tenor.com/ https://cdn.jsdelivr.net;
     frame-src https:"
     />
@@ -52,26 +52,6 @@
     <link rel="icon" href="https://deckdeckgo.com/favicon-32x32.png" type="image/png" />
 
     <meta name="theme-color" content="#ffffff" />
-
-    <script nonce="17ab93ad-71a0-4812-bc0f-6f87711a63c7">
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', async () => {
-          try {
-            const reg = await navigator.serviceWorker.register('../service-worker.js');
-            reg.onupdatefound = () => {
-              const installingWorker = reg.installing;
-              installingWorker.onstatechange = () => {
-                if (installingWorker.state === 'installed') {
-                  window.dispatchEvent(new Event('swUpdate'));
-                }
-              };
-            };
-          } catch (e) {
-            console.warn('No service worker registered');
-          }
-        });
-      }
-    </script>
 
     <script nonce="fd70f3b5-5391-415d-af05-3a18e4ffdb0e">
       window.ROOM_NAME = '{{DECKDECKGO_TITLE}}';

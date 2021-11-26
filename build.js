@@ -5,15 +5,15 @@ const {readFile, writeFile, mkdir, rm} = require('fs').promises;
 const minify = require('html-minifier-terser').minify;
 const crypto = require('crypto');
 
-const buildScript = () => {
+const buildScript = async () => {
   const {metafile} = esbuild.buildSync({
-    entryPoints: ['src/deck/index.js'],
+    entryPoints: ['src/index.js', 'src/deck/index.js'],
     entryNames: '[dir]/[name]-[hash]',
     bundle: true,
     minify: true,
     format: 'esm',
     target: ['esnext'],
-    outdir: 'dist/build/deck',
+    outdir: 'dist/build',
     metafile: true,
     define: {
       'process.env.SIGNALING_SERVER': JSON.stringify('https://api.deckdeckgo.com'),
@@ -23,7 +23,15 @@ const buildScript = () => {
   });
 
   const {outputs} = metafile;
-  return Object.keys(outputs)[0];
+
+  const prepare = async (scriptPath) => ({
+    scriptPath: scriptPath.replace('dist', ''),
+    sha256: await scriptSha256(scriptPath)
+  });
+
+  const promises = Object.keys(outputs).map((scriptPath) => prepare(scriptPath));
+
+  return Promise.all(promises);
 };
 
 const scriptSha256 = async (scriptPath) => {
@@ -52,9 +60,7 @@ const buildCSS = () => {
   await rm('./dist', {recursive: true, force: true});
   await mkdir('./dist/p', {recursive: true});
 
-  const scriptPath = buildScript();
-
-  const sha256 = await scriptSha256(scriptPath);
+  const scripts = await buildScript();
 
   const cssPaths = buildCSS();
 
@@ -73,9 +79,15 @@ const buildCSS = () => {
   };
 
   const html = (await minify(src, minifyOptions))
-    .replace('{{DECKDECKGO_EXTRA_SHAS}}', sha256)
-    .replace('<!-- DECKDECKGO_HEAD_SCRIPT -->', `<script type="module" src="${scriptPath.replace('dist', '')}"></script>`)
-    .replace('<!-- DECKDECKGO_HEAD_CSS -->', cssPaths.map(cssPath => `<link href="${cssPath.replace('dist', '')}" rel="stylesheet">`).join(''));
+    .replace('{{DECKDECKGO_EXTRA_SHAS}}', scripts.map(({sha256}) => sha256).join(' '))
+    .replace(
+      '<!-- DECKDECKGO_HEAD_SCRIPT -->',
+      scripts.map(({scriptPath}) => `<script type="module" src="${scriptPath}"></script>`).join('')
+    )
+    .replace(
+      '<!-- DECKDECKGO_HEAD_CSS -->',
+      cssPaths.map((cssPath) => `<link href="${cssPath.replace('dist', '')}" rel="stylesheet">`).join('')
+    );
 
   await writeFile('dist/p/deck.html', html);
 })();
