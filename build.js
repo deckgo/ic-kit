@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const esbuild = require('esbuild');
 const {readFile, writeFile, mkdir, rm} = require('fs').promises;
 const minify = require('html-minifier-terser').minify;

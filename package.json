@@ -4,7 +4,9 @@
   "description": "The kit that generates the templates for the PWA deployed on the Internet Computer with DeckDeckGo",
   "main": "index.js",
   "scripts": {
-    "build": "node ./build.js"
+    "build:js": "node ./build.js",
+    "build:sw": "node ./build-sw.js",
+    "build": "npm run build:js && npm run build:sw"
   },
   "author": "David Dal Busco",
   "license": "MIT",
@@ -17,7 +19,8 @@
     "html-minifier-terser": "^6.0.2",
     "husky": "^7.0.4",
     "prettier": "^2.4.1",
-    "prettier-quick": "^0.0.5"
+    "prettier-quick": "^0.0.5",
+    "workbox-build": "^6.4.1"
   },
   "husky": {
     "hooks": {
