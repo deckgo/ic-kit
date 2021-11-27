@@ -1,5 +1,5 @@
 {
-  "name": "{{DECKDECKGO_TITLE}}",
+  "name": "{{DECKDECKGO_AUTHOR}}",
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
