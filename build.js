@@ -56,15 +56,8 @@ const buildCSS = () => {
   return Object.keys(outputs);
 };
 
-(async () => {
-  await rm('./dist', {recursive: true, force: true});
-  await mkdir('./dist/p', {recursive: true});
-
-  const scripts = await buildScript();
-
-  const cssPaths = buildCSS();
-
-  const src = await readFile('src/deck/index.html', 'utf8');
+const buildHTML = async ({srcPath, destPath, scripts, cssPaths}) => {
+  const src = await readFile(srcPath, 'utf8');
 
   const minifyOptions = {
     collapseWhitespace: true,
@@ -89,5 +82,19 @@ const buildCSS = () => {
       cssPaths.map((cssPath) => `<link href="${cssPath.replace('dist', '')}" rel="stylesheet">`).join('')
     );
 
-  await writeFile('dist/p/deck.html', html);
+  await writeFile(destPath, html);
+};
+
+(async () => {
+  await rm('./dist', {recursive: true, force: true});
+  await mkdir('./dist/p', {recursive: true});
+
+  const scripts = await buildScript();
+
+  const cssPaths = buildCSS();
+
+  await buildHTML({srcPath: 'src/deck/index.html', destPath: 'dist/p/deck.html', scripts, cssPaths});
+  await buildHTML({srcPath: 'src/index.html', destPath: 'dist/index.html',
+    scripts: scripts.filter(({scriptPath}) => scriptPath.indexOf('/deck/') === -1),
+    cssPaths: cssPaths.filter(cssPath => cssPath.indexOf('/deck/') === -1)});
 })();

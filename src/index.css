@@ -18,3 +18,18 @@ ion-header ion-toolbar {
 ion-app div.ion-page:not(.papyrus) ion-content>main {
   box-shadow: none;
 }
+
+div.ion-page ion-content > main.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  max-width: 720px;
+}
+
+div.ion-page ion-content > main.overview img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
