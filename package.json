@@ -1,6 +1,6 @@
 {
   "name": "ic-kit",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "The kit that generates the templates for the PWA deployed on the Internet Computer with DeckDeckGo",
   "main": "index.js",
   "scripts": {
