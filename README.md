@@ -28,6 +28,6 @@ npm run build
 
 ## License
 
-MIT
+MIT © [David Dal Busco](mailto:david.dalbusco@outlook.com) and [Nicolas Mattia](mailto:nicolas@nmattia.com)
 
 [DeckDeckGo]: https://deckdeckgo.com
