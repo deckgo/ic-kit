@@ -7,3 +7,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await initRemote();
 }, {once: true})
+
+initReload();
+initButtons();
