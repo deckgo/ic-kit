@@ -1,4 +1,4 @@
-import {initReload, initButtons, initFullscreen, initActions, postLoading, initRemote} from "@deckdeckgo/kit";
+import {initFullscreen, initActions, postLoading, initRemote} from "@deckdeckgo/kit";
 
 document.addEventListener('DOMContentLoaded', async () => {
     await postLoading();
@@ -7,6 +7,3 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     await initRemote();
 }, {once: true})
-
-initReload();
-initButtons();
