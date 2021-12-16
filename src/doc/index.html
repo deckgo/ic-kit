@@ -12,7 +12,7 @@
     img-src 'self' data: https:;
     style-src 'self' 'unsafe-inline' https://www.gstatic.com https://fonts.googleapis.com https://cdn.jsdelivr.net/ https://unpkg.com/;
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
-    script-src 'self' blob: 'unsafe-eval' 'nonce-fd70f3b5-5391-415d-af05-3a18e4ffdb0e' {{DECKDECKGO_EXTRA_SHAS}} https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    script-src 'self' blob: 'unsafe-eval' 'nonce-5db0df90-fe5b-4109-bd7c-5e0907fc5839' {{DECKDECKGO_EXTRA_SHAS}} https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
     connect-src 'self' https://deckdeckgo.com/ https://app.deckdeckgo.com/ wss://api.deckdeckgo.com/ https://raw.githubusercontent.com/PrismJS/ https://raw.githubusercontent.com/deckgo/ https://api.tenor.com/ https://cdn.jsdelivr.net;
     frame-src https:"
     />
@@ -53,11 +53,8 @@
 
     <meta name="theme-color" content="#ffffff" />
 
-    <script nonce="fd70f3b5-5391-415d-af05-3a18e4ffdb0e">
-      window.ROOM_NAME = '{{DECKDECKGO_TITLE}}';
-      window.EMBEDDED = false;
-      window.PENDING_REMOTE_REQUESTS = [];
-      window.REMOTE_STATE = 0;
+    <script nonce="5db0df90-fe5b-4109-bd7c-5e0907fc5839">
+      window.EMBEDDED = true;
     </script>
 
     <link rel="manifest" href="../manifest.webmanifest" />
@@ -73,73 +70,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
     <script type="module" src="https://unpkg.com/@deckdeckgo/core@latest/dist/deckdeckgo/deckdeckgo.esm.js"></script>
-    <script type="module" src="https://unpkg.com/@deckdeckgo/remote@latest/dist/deckdeckgo-remote/deckdeckgo-remote.esm.js"></script>
-    <script type="module" src="https://unpkg.com/@deckdeckgo/charts@latest/dist/deckdeckgo-charts/deckdeckgo-charts.esm.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/laser-pointer@latest/dist/deckdeckgo-laser-pointer/deckdeckgo-laser-pointer.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/drag-resize-rotate@latest/dist/deckdeckgo-drag-resize-rotate/deckdeckgo-drag-resize-rotate.esm.js"
-    ></script>
+
     <script
       type="module"
       src="https://unpkg.com/@deckdeckgo/highlight-code@latest/dist/deckdeckgo-highlight-code/deckdeckgo-highlight-code.esm.js"
     ></script>
     <script type="module" src="https://unpkg.com/@deckdeckgo/lazy-img@latest/dist/deckdeckgo-lazy-img/deckdeckgo-lazy-img.esm.js"></script>
-    <script type="module" src="https://unpkg.com/@deckdeckgo/math@latest/dist/deckdeckgo-math/deckdeckgo-math.esm.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/word-cloud@latest/dist/deckdeckgo-word-cloud/deckdeckgo-word-cloud.esm.js"
-    ></script>
-    <script type="module" src="https://unpkg.com/@deckdeckgo/markdown@latest/dist/deckdeckgo-markdown/deckdeckgo-markdown.esm.js"></script>
     <script type="module" src="https://unpkg.com/@deckdeckgo/elements@latest/dist/elements/elements.esm.js"></script>
-
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-title@latest/dist/deckdeckgo-slide-title/deckdeckgo-slide-title.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-content@latest/dist/deckdeckgo-slide-content/deckdeckgo-slide-content.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-split@latest/dist/deckdeckgo-slide-split/deckdeckgo-slide-split.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-gif@latest/dist/deckdeckgo-slide-gif/deckdeckgo-slide-gif.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-chart@latest/dist/deckdeckgo-slide-chart/deckdeckgo-slide-chart.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-youtube@latest/dist/deckdeckgo-slide-youtube/deckdeckgo-slide-youtube.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-author@latest/dist/deckdeckgo-slide-author/deckdeckgo-slide-author.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-qrcode@latest/dist/deckdeckgo-slide-qrcode/deckdeckgo-slide-qrcode.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-poll@latest/dist/deckdeckgo-slide-poll/deckdeckgo-slide-poll.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-aspect-ratio@latest/dist/deckdeckgo-slide-aspect-ratio/deckdeckgo-slide-aspect-ratio.esm.js"
-    ></script>
-    <script
-      type="module"
-      src="https://unpkg.com/@deckdeckgo/slide-playground@latest/dist/deckdeckgo-slide-playground/deckdeckgo-slide-playground.esm.js"
-    ></script>
 
     <script type="module" src="https://unpkg.com/web-social-share@latest/dist/websocialshare/websocialshare.esm.js"></script>
 
@@ -149,63 +86,24 @@
   </head>
   <body>
     <ion-app class="loading">
-      <ion-menu id="ion-menu" side="start" type="overlay" swipeGesture="false" content-id="main">
-        <ion-content>
-          <deckgo-chapters></deckgo-chapters>
-        </ion-content>
-      </ion-menu>
-
       <div class="ion-page" id="main">
         <ion-header>
           <ion-toolbar>
-            <ion-buttons slot="start">
-              <ion-menu-button></ion-menu-button>
-            </ion-buttons>
-            <ion-title><!-- DECKDECKGO_TITLE --></ion-title>
             <ion-buttons slot="end">
               <ion-button id="menu"><ion-icon name="ellipsis-vertical"></ion-icon></ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
 
-        <ion-content force-overscroll="false" style="position: relative; --overflow: hidden">
-          <main><!-- DECKDECKGO_DECK --></main>
-
-          <deckgo-remote></deckgo-remote>
-
-          <button id="previous" class="navigation ion-activatable">
-            <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon name="chevron-back"></ion-icon>
-          </button>
-
-          <button id="next" class="navigation ion-activatable">
-            <ion-ripple-effect></ion-ripple-effect>
-            <ion-icon name="chevron-forward"></ion-icon>
-          </button>
+        <ion-content>
+          <main>
+            <!-- DECKDECKGO_DOC -->
+          </main>
         </ion-content>
       </div>
 
-      <ion-fab vertical="top" horizontal="end" slot="fixed" id="fullscreen-menu">
-        <button id="slidePicker" class="navigation ion-activatable" aria-label="Jump to a particular slide">
-          <ion-ripple-effect></ion-ripple-effect>
-          <ion-icon name="list"></ion-icon>
-        </button>
-
-        <button id="fullScreen" class="navigation ion-activatable hide-on-mobile" aria-label="Full screen">
-          <ion-ripple-effect></ion-ripple-effect>
-          <ion-icon name="contract"></ion-icon>
-        </button>
-
-        <button id="remote" class="navigation ion-activatable" aria-label="Open Remote">
-          <ion-ripple-effect></ion-ripple-effect>
-          <ion-icon name="phone-portrait-outline"></ion-icon>
-        </button>
-      </ion-fab>
-
       <!-- Ionic components anchors -->
       <ion-popover-controller></ion-popover-controller>
-      <ion-modal-controller></ion-modal-controller>
-      <ion-alert-controller></ion-alert-controller>
 
       <web-social-share show="false" style="--web-social-share-backdrop-opacity: 0.5">
         <ion-icon

@@ -1,4 +1,8 @@
-@import url("../node_modules/@deckdeckgo/kit/css/kit.css");
+@import url("../node_modules/@deckdeckgo/kit/css/content.css");
+@import url("../node_modules/@deckdeckgo/kit/css/header.css");
+@import url("../node_modules/@deckdeckgo/kit/css/img.css");
+@import url("../node_modules/@deckdeckgo/kit/css/popover.css");
+@import url("../node_modules/@deckdeckgo/kit/css/print.css");
 
 @import "variables.css";
 
@@ -15,9 +19,30 @@ ion-header ion-toolbar {
   --border-color: transparent;
 }
 
-ion-app div.ion-page:not(.papyrus) ion-content>main {
-  box-shadow: none;
+/* Until Web Components are loaded, don't display content */
+
+body {
+  background: #ffffff;
 }
+
+ion-app.loading,
+ion-app.loading a {
+  color: transparent;
+}
+
+ion-app.loading a {
+  color: transparent;
+}
+
+ion-app.loading {
+  display: none;
+}
+
+ion-app.loading web-social-share {
+  display: none;
+}
+
+/* Index page */
 
 div.ion-page ion-content > main.overview {
   display: flex;

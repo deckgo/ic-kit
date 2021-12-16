@@ -29,6 +29,6 @@
     }
   },
   "dependencies": {
-    "@deckdeckgo/kit": "^4.0.2"
+    "@deckdeckgo/kit": "^5.0.0"
   }
 }
