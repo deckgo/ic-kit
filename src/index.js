@@ -1,4 +1,4 @@
-import {initButtons, initReload} from '@deckdeckgo/kit';
+import {initButtons, initReload, postLoading} from '@deckdeckgo/kit';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', async () => {
@@ -17,6 +17,8 @@ if ('serviceWorker' in navigator) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => postLoading(), {once: true});
 
 initReload();
 initButtons();

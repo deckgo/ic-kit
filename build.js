@@ -43,7 +43,7 @@ const scriptSha256 = async (scriptPath) => {
 
 const buildCSS = () => {
   const {metafile} = esbuild.buildSync({
-    entryPoints: ['src/index.css', 'src/deck/index.css'],
+    entryPoints: ['src/index.css', 'src/deck/index.css', 'src/doc/index.css'],
     bundle: true,
     minify: true,
     format: 'esm',
@@ -88,13 +88,30 @@ const buildHTML = async ({srcPath, destPath, scripts, cssPaths}) => {
 (async () => {
   await rm('./dist', {recursive: true, force: true});
   await mkdir('./dist/p', {recursive: true});
+  await mkdir('./dist/d', {recursive: true});
 
   const scripts = await buildScript();
 
   const cssPaths = buildCSS();
 
-  await buildHTML({srcPath: 'src/deck/index.html', destPath: 'dist/p/deck.html', scripts, cssPaths});
-  await buildHTML({srcPath: 'src/index.html', destPath: 'dist/index.html',
+  await buildHTML({
+    srcPath: 'src/deck/index.html',
+    destPath: 'dist/p/index.html',
+    scripts,
+    cssPaths: cssPaths.filter((cssPath) => cssPath.indexOf('/doc/') === -1)
+  });
+
+  await buildHTML({
+    srcPath: 'src/doc/index.html',
+    destPath: 'dist/d/index.html',
     scripts: scripts.filter(({scriptPath}) => scriptPath.indexOf('/deck/') === -1),
-    cssPaths: cssPaths.filter(cssPath => cssPath.indexOf('/deck/') === -1)});
+    cssPaths: cssPaths.filter((cssPath) => cssPath.indexOf('/deck/') === -1)
+  });
+
+  await buildHTML({
+    srcPath: 'src/index.html',
+    destPath: 'dist/index.html',
+    scripts: scripts.filter(({scriptPath}) => scriptPath.indexOf('/deck/') === -1 && scriptPath.indexOf('/doc/') === -1),
+    cssPaths: cssPaths.filter((cssPath) => cssPath.indexOf('/deck/') === -1 && cssPath.indexOf('/doc/') === -1)
+  });
 })();

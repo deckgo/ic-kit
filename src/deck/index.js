@@ -1,7 +1,7 @@
-import {initFullscreen, initActions, postLoading, initRemote} from "@deckdeckgo/kit";
+import {initFullscreen, initActions, postLoadingDeck, initRemote} from "@deckdeckgo/kit";
 
 document.addEventListener('DOMContentLoaded', async () => {
-    await postLoading();
+    await postLoadingDeck();
     await initActions();
     await initFullscreen();
 
