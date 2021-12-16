@@ -1,25 +1,14 @@
 @import url("https://unpkg.com/@deckdeckgo/styles@latest/css/deck.css");
 
+@import url("../../node_modules/@deckdeckgo/kit/css/alert.css");
+@import url("../../node_modules/@deckdeckgo/kit/css/button.css");
+@import url("../../node_modules/@deckdeckgo/kit/css/deck.css");
+@import url("../../node_modules/@deckdeckgo/kit/css/fullscreen.css");
+@import url("../../node_modules/@deckdeckgo/kit/css/menu.css");
+@import url("../../node_modules/@deckdeckgo/kit/css/modal.css");
+
 deckgo-deck {
   color: black;
   --color: black;
   --ion-text-color: black;
-}
-
-/* Until Web Components are loaded, don't display content */
-body {
-  background: #ffffff;
-}
-
-ion-app.loading,
-ion-app.loading a {
-  color: transparent;
-}
-
-ion-app.loading a {
-  color: transparent;
-}
-
-ion-app.loading {
-  display: none;
 }

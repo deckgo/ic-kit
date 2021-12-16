@@ -12,7 +12,7 @@
     img-src 'self' data: https:;
     style-src 'self' 'unsafe-inline' https://www.gstatic.com https://fonts.googleapis.com https://cdn.jsdelivr.net/ https://unpkg.com/;
     font-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com;
-    script-src 'self' blob: 'unsafe-eval' 'nonce-fd70f3b5-5391-415d-af05-3a18e4ffdb0e' {{DECKDECKGO_EXTRA_SHAS}} https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
+    script-src 'self' blob: 'unsafe-eval' 'nonce-5db0df90-fe5b-4109-bd7c-5e0907fc5839' {{DECKDECKGO_EXTRA_SHAS}} https://unpkg.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net;
     connect-src 'self' https://deckdeckgo.com/ https://app.deckdeckgo.com/ wss://api.deckdeckgo.com/ https://raw.githubusercontent.com/PrismJS/ https://raw.githubusercontent.com/deckgo/ https://api.tenor.com/ https://cdn.jsdelivr.net;
     frame-src https:"
     />
@@ -53,11 +53,8 @@
 
     <meta name="theme-color" content="#ffffff" />
 
-    <script nonce="fd70f3b5-5391-415d-af05-3a18e4ffdb0e">
-      window.ROOM_NAME = '{{DECKDECKGO_TITLE}}';
-      window.EMBEDDED = false;
-      window.PENDING_REMOTE_REQUESTS = [];
-      window.REMOTE_STATE = 0;
+    <script nonce="5db0df90-fe5b-4109-bd7c-5e0907fc5839">
+      window.EMBEDDED = true;
     </script>
 
     <link rel="manifest" href="../manifest.webmanifest" />
