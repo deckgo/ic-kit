@@ -7,11 +7,13 @@
 @import "variables.css";
 
 ion-header {
-  background: var(--ion-color-light);
+  --background: var(--ion-color-light);
 }
 
 ion-header[class*="header"]::after {
   background-image: none;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  bottom: 0;
 }
 
 ion-header ion-toolbar {
