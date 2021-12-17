@@ -53,10 +53,15 @@ div.ion-page ion-content > main.overview {
   align-items: center;
 
   max-width: 720px;
+  margin: 0 auto;
 }
 
 div.ion-page ion-content > main.overview img {
   width: 8rem;
   height: 8rem;
   border-radius: 50%;
+}
+
+div.ion-page ion-content > main.overview ul {
+  list-style: circle;
 }
