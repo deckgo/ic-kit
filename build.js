@@ -44,6 +44,7 @@ const scriptSha256 = async (scriptPath) => {
 const buildCSS = () => {
   const {metafile} = esbuild.buildSync({
     entryPoints: ['src/index.css', 'src/deck/index.css', 'src/doc/index.css'],
+    entryNames: '[dir]/[name]-[hash]',
     bundle: true,
     minify: true,
     format: 'esm',
