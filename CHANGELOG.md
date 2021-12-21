@@ -1,3 +1,10 @@
+# 1.2.0 (2021-12-21)
+
+### Features
+
+- social images
+- disallow "only" private content in `robots.txt`
+
 # 1.1.0 (2021-12-17)
 
 ### Features
