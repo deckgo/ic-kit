@@ -3,6 +3,3 @@
 User-agent: *
 Disallow: /images/
 Disallow: /data/
-Allow: /index.html
-Allow: /p/*
-Allow: /d/*
