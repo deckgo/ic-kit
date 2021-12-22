@@ -1,3 +1,9 @@
+# 1.2.1 (2021-12-22)
+
+### Features
+
+- use latest doc styles
+
 # 1.2.0 (2021-12-21)
 
 ### Features
